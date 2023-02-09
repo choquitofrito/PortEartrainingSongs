@@ -28,11 +28,22 @@ class Library
     #[ORM\ManyToOne(inversedBy: 'libraries')]
     private ?User $user = null;
 
-    public function __construct()
+    public function __construct($init = [])
     {
+        $this->hydrate($init);
         $this->songs = new ArrayCollection();
     }
 
+    // hydrate
+    public function hydrate(array $init)
+    {
+        foreach ($init as $key => $value) {
+            $method = "set" . ucfirst($key);
+            if (method_exists($this, $method)) {
+                $this->$method($value);
+            }
+        }
+    }
     public function getId(): ?int
     {
         return $this->id;

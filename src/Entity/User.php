@@ -37,7 +37,19 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\OneToMany(mappedBy: 'user', targetEntity: Library::class)]
     private Collection $libraries;
 
-    public function __construct()
+
+    // hydrate
+    public function hydrate(array $init)
+    {
+        foreach ($init as $key => $value) {
+            $method = "set" . ucfirst($key);
+            if (method_exists($this, $method)) {
+                $this->$method($value);
+            }
+        }
+    }
+
+    public function __construct($init = [])
     {
         $this->studyStatuses = new ArrayCollection();
         $this->libraries = new ArrayCollection();

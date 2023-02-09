@@ -30,9 +30,21 @@ class Song
     #[ORM\OneToMany(mappedBy: 'song', targetEntity: StudyStatus::class)]
     private Collection $studyStatuses;
 
-    public function __construct()
+    public function __construct($init = [])
     {
+        $this->hydrate($init);
         $this->studyStatuses = new ArrayCollection();
+    }
+
+    // hydrate
+    public function hydrate(array $init)
+    {
+        foreach ($init as $key => $value) {
+            $method = "set" . ucfirst($key);
+            if (method_exists($this, $method)) {
+                $this->$method($value);
+            }
+        }
     }
 
     public function getId(): ?int
