@@ -7,7 +7,7 @@ php bin/console doctrine:database:create --no-interaction
 php bin/console make:migration --no-interaction
 php bin/console doctrine:migrations:migrate --no-interaction
 @REM php bin/console doctrine:fixtures:load --group=base --no-interaction
-php bin/console doctrine:fixtures:load --group=base --no-interaction
+php bin/console doctrine:fixtures:load --no-interaction
 
 
 @REM remoto

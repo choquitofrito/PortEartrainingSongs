@@ -28,7 +28,7 @@ class Library
     #[ORM\ManyToOne(inversedBy: 'libraries')]
     private ?User $user = null;
 
-    public function __construct()
+    public function __construct(array $init=[])
     {
         $this->songs = new ArrayCollection();
     }
