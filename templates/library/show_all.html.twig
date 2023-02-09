@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Libraries
+{% endblock %}
+
+{% block body %}
+
+	{% for library in libraries %}
+		<a href="{{ path ('library_show_songs', { id:library.id} )}}">{{library->name }}</a>
+	{% endfor %}
+
+{% endblock %}
