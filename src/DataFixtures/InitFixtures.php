@@ -51,12 +51,12 @@ class InitFixtures extends Fixture
             'originalTonality' => 'G'
         ]);
         $s2 = new Song([
-            'title' => 'song1',
+            'title' => 'song2',
             'originalTempo' => 150,
             'originalTonality' => 'A'
         ]);
         $s3 = new Song([
-            'title' => 'song1',
+            'title' => 'song3',
             'originalTempo' => 120,
             'originalTonality' => 'Bb'
         ]);
@@ -68,6 +68,11 @@ class InitFixtures extends Fixture
         $ss1 = new StudyStatus(['tempoTonality'=> ['C'=>150, 'Db' => 200]]);
         $user1->addStudyStatus($ss1);
         $s1->addStudyStatus($ss1);
+
+        $ss2 = new StudyStatus(['tempoTonality'=> ['C'=>110, 'Db' => 210]]);
+        $user1->addStudyStatus($ss2);
+        $s2->addStudyStatus($ss2);
+
 
         // dd($l1);
         $manager->persist($user1);

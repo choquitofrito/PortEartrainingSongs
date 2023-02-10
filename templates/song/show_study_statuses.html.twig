@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello SongController!
+{% endblock %}
+
+{% block body %}
+
+	<h1>{{ studyStatus.song.title }}</h1>
+	{% set tonalities = ['C','Db','D','Eb','E','F','Gb','G','Ab','A','Bb','B'] %}
+	{% set tempoTonality = studyStatus.tempoTonality %}
+	{% for tonality in tonalities %}
+		<ul class="list-group">
+			{% if (tempoTonality[tonality] is defined )%}
+				<li class="list-group-item">
+					{{ tonality }}
+					<input type="number" id='{{ tonality }}' value='{{ tempoTonality[tonality]}}'>
+				</li>
+				{% endif %}
+		</ul>
+	{% endfor %}
+
+{% endblock %}
