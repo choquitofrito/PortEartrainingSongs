@@ -17,12 +17,12 @@ class LibraryFixtures extends Fixture
         // $faker = Factory::create();
         // generate data by calling methods
 
-        $l1 = new Library(['name'=>'library 1']);
-        $l2 = new Library(['name'=>'library 2']);
-        // dd($l1);
-        $manager->persist($l1);
-        $manager->persist($l2);
+        // $l1 = new Library(['name'=>'library 1']);
+        // $l2 = new Library(['name'=>'library 2']);
+        // // dd($l1);
+        // $manager->persist($l1);
+        // $manager->persist($l2);
 
-        $manager->flush();
+        // $manager->flush();
     }
 }

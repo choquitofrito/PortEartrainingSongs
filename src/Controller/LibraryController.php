@@ -20,7 +20,7 @@ class LibraryController extends AbstractController
     #[Route('/library/show/all', name: 'library_show_all')]
     public function showAll(LibraryRepository $rep): Response
     {
-        return $this->render('library/library_show_all.html.twig', ['libraries'=> $rep->findAll()]);
+        return $this->render('library/show_all.html.twig', ['libraries'=> $rep->findAll()]);
     }
 
     #[Route('/library/show/songs/{id}', name: 'library_show_songs')]

@@ -31,10 +31,10 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column]
     private ?string $password = null;
 
-    #[ORM\OneToMany(mappedBy: 'user', targetEntity: StudyStatus::class)]
+    #[ORM\OneToMany(mappedBy: 'user', targetEntity: StudyStatus::class, cascade:['persist'])]
     private Collection $studyStatuses;
 
-    #[ORM\OneToMany(mappedBy: 'user', targetEntity: Library::class)]
+    #[ORM\OneToMany(mappedBy: 'user', targetEntity: Library::class, cascade:['persist'])]
     private Collection $libraries;
 
 

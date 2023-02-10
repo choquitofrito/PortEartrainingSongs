@@ -8,7 +8,7 @@
 
 # Implementation
 
-# 1. Modèle
+## 1. Modèle
 
 - Créer le modèle 
 - Créer script (.bat en windows) pour initialiser-effacer la BD-lancer les migrations
@@ -20,7 +20,7 @@
 
 - Créer des fixtures pour remplir de données de base du modèle, speciálement pour l'User car vous ne voulez pas devoir enregistrer à la main un User à chaque migration (voir UserFixtures dans le projet, elle est particulière)
   
-# 2. Controllers et vues
+## 2. Controllers et vues
 
 - Installez webpack-encore
 - Lancer yarn install

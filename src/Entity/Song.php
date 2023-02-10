@@ -27,7 +27,7 @@ class Song
     #[ORM\ManyToOne(inversedBy: 'songs')]
     private ?Library $library = null;
 
-    #[ORM\OneToMany(mappedBy: 'song', targetEntity: StudyStatus::class)]
+    #[ORM\OneToMany(mappedBy: 'song', targetEntity: StudyStatus::class, cascade:['persist', 'remove'])]
     private Collection $studyStatuses;
 
     public function __construct($init = [])

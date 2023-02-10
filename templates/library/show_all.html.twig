@@ -6,7 +6,10 @@
 {% block body %}
 
 	{% for library in libraries %}
-		<a href="{{ path ('library_show_songs', { id:library.id} )}}">{{library->name }}</a>
+		<ul class="list-group">
+			<li class="list-group-item">
+				<a href="{{ path ('library_show_songs', { id:library.id} ) }}">{{ library.name }}</a>
+			</li>
+		</ul>
 	{% endfor %}
-
 {% endblock %}

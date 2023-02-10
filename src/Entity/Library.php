@@ -22,7 +22,7 @@ class Library
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $description = null;
 
-    #[ORM\OneToMany(mappedBy: 'library', targetEntity: Song::class)]
+    #[ORM\OneToMany(mappedBy: 'library', targetEntity: Song::class, cascade:['persist','remove'])]
     private Collection $songs;
 
     #[ORM\ManyToOne(inversedBy: 'libraries')]
