@@ -51,6 +51,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     public function __construct($init = [])
     {
+        $this->hydrate($init);
         $this->studyStatuses = new ArrayCollection();
         $this->libraries = new ArrayCollection();
     }
