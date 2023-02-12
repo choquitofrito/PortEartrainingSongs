@@ -7,7 +7,7 @@
 	{% for song in librarySongs %}
 		<ul class="list-group">
 			<li class="list-group-item">
-				<a href="{{ path ('show_study_statuses', { idSong:song.id} ) }}">{{ song.title }}</a>
+				<a href="{{ path ('show_study_statuses', { id:song.id} ) }}">{{ song.title }}</a>
 			</li>
 		</ul>
 	{% endfor %}

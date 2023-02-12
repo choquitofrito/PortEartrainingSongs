@@ -1,11 +1,17 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello SongController!
+{% block title %}Study Song!
 {% endblock %}
 
 {% block body %}
 
 	<h1>{{ studyStatus.song.title }}</h1>
+	Player here
+	<input type="hidden" id="fileLink" value="{{ fileLink }}">
+
+	<div id="playerDiv">
+		{% include "/includes/player/controls.html.twig" %}
+	</div>
 	{% set tonalities = ['C','Db','D','Eb','E','F','Gb','G','Ab','A','Bb','B'] %}
 	{% set tempoTonality = studyStatus.tempoTonality %}
 	{% for tonality in tonalities %}
@@ -15,8 +21,15 @@
 					{{ tonality }}
 					<input type="number" id='{{ tonality }}' value='{{ tempoTonality[tonality]}}'>
 				</li>
-				{% endif %}
+			{% endif %}
 		</ul>
 	{% endfor %}
 
+	{{ asset('audiosUpload') }}
+
+{% endblock %}
+
+{% block javascripts %}
+	{{ parent () }}
+	{{ encore_entry_script_tags('player') }}
 {% endblock %}

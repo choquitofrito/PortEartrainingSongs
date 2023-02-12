@@ -22,5 +22,8 @@
         "dev": "encore dev",
         "watch": "encore dev --watch",
         "build": "encore production --progress"
+    },
+    "dependencies": {
+        "soundtouchjs": "^0.1.30"
     }
 }

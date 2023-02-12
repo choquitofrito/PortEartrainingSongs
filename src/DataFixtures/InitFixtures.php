@@ -32,6 +32,7 @@ class InitFixtures extends Fixture
             $user1,
             'password'
         ));
+        $user1->setRoles(['ROLE_USER']);
 
         $l1 = new Library([
             'name' => 'library 1',
@@ -48,17 +49,22 @@ class InitFixtures extends Fixture
         $s1 = new Song([
             'title' => 'song1',
             'originalTempo' => 100,
-            'originalTonality' => 'G'
+            'originalTonality' => 'G',
+            'fileLink' => 'song1.mp3'
         ]);
         $s2 = new Song([
             'title' => 'song2',
             'originalTempo' => 150,
-            'originalTonality' => 'A'
+            'originalTonality' => 'A',
+            'fileLink' => 'song2.mp3'
         ]);
         $s3 = new Song([
             'title' => 'song3',
             'originalTempo' => 120,
-            'originalTonality' => 'Bb'
+            'originalTonality' => 'Bb',
+            'fileLink' => 'song3.mp3'
+
+
         ]);
 
         $l1->addSong($s1);

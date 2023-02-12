@@ -30,6 +30,9 @@ class Song
     #[ORM\OneToMany(mappedBy: 'song', targetEntity: StudyStatus::class, cascade:['persist', 'remove'])]
     private Collection $studyStatuses;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $fileLink = null;
+
     public function __construct($init = [])
     {
         $this->hydrate($init);
@@ -126,6 +129,18 @@ class Song
                 $studyStatus->setSong(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getFileLink(): ?string
+    {
+        return $this->fileLink;
+    }
+
+    public function setFileLink(?string $fileLink): self
+    {
+        $this->fileLink = $fileLink;
 
         return $this;
     }
