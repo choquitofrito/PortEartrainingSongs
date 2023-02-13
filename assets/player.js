@@ -63,7 +63,8 @@ pitchSlider.addEventListener('input', function () {
 
 keySlider.addEventListener('input', function () {
     shifter.pitchSemitones = this.value;
-    keyOutput.innerHTML = this.value / 2;
+    console.log (this.value);
+    keyOutput.innerHTML = this.value;
     shifter.tempo = tempoSlider.value;
 });
 

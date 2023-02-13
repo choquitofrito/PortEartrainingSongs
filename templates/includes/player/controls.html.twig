@@ -7,7 +7,7 @@
     </div>
     <progress id="progressMeter" value="0" max="100"></progress>
 </div>
-Rate: <input type="range" autofocus="true" min="0.1" max="4.0" name="tempoSlider" value="1.0" id="tempoSlider" step="0.01" list="temporange">
+Speed: <input type="range" autofocus="true" min="0.1" max="4.0" name="tempoSlider" value="1.0" id="tempoSlider" step="0.01" list="temporange">
 <datalist id="temporange">
     <option value="0.1" label="0">
     <option value="0.5">
@@ -20,6 +20,8 @@ Rate: <input type="range" autofocus="true" min="0.1" max="4.0" name="tempoSlider
     <option value="4.0" label="4">
 </datalist>
 <div id="tempo"></div>
+
+<div class="d-none" id="divControlsPitch">
 Pitch: <input type="range" autofocus="true" min="0.1" max="2.0" name="pitchSlider" value="1.0" id="pitchSlider" step="0.01" list="pitchrange">
 <datalist id="pitchrange">
     <option value="0.1" label="0">
@@ -28,7 +30,10 @@ Pitch: <input type="range" autofocus="true" min="0.1" max="2.0" name="pitchSlide
     <option value="1.5">
     <option value="2.0" label="2">
 </datalist>
-<div id="pitch"></div>
+</div>
+
+
+<div class="d-none" id="pitch"></div>
 
 Change Key: <input type="range" autofocus="true" min="-7.0" max="7.0" name="keySlider" value="0" id="keySlider" step="1" list="keyrange" />
 <datalist id="keyrange">

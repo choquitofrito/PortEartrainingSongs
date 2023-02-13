@@ -1,4 +1,4 @@
-# Analise
+# Analyse
 
 - Définir les fonctionnalités (interface et/ou UML use case)
 - Créer diagramme de classes
