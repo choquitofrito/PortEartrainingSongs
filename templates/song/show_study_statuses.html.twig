@@ -14,14 +14,22 @@
 	</div>
 	{% set tonalities = ['C','Db','D','Eb','E','F','Gb','G','Ab','A','Bb','B'] %}
 	{% set tempoTonality = studyStatus.tempoTonality %}
+	{% set idSong = studyStatus.song.id %}
 	{% for tonality in tonalities %}
 		<ul class="list-group">
+			<li class="list-group-item">
+			{{ tonality }}
 			{% if (tempoTonality[tonality] is defined )%}
-				<li class="list-group-item">
-					{{ tonality }}
-					<input type="number" id='{{ tonality }}' value='{{ tempoTonality[tonality]}}'>
-				</li>
+				<input class="input-tonality" type="number" id='val_{{ tonality }}' value='{{ tempoTonality[tonality]}}'>
+			{% else %}
+				<input class="input-tonality" type="number" id='val_{{ tonality }}'>
 			{% endif %}
+				<div class="input-tonality-save float-right" 
+							data-tonality="{{ tonality }}"
+							data-id-song="{{ idSong }}">
+					<i class="fas fa-save"></i>
+				</div>
+			</li>
 		</ul>
 	{% endfor %}
 
@@ -31,4 +39,5 @@
 {% block javascripts %}
 	{{ parent () }}
 	{{ encore_entry_script_tags('player') }}
+	{{ encore_entry_script_tags('customJSTonalities') }}
 {% endblock %}

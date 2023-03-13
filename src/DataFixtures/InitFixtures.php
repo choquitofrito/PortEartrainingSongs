@@ -79,6 +79,10 @@ class InitFixtures extends Fixture
         $user1->addStudyStatus($ss2);
         $s2->addStudyStatus($ss2);
 
+        $ss3 = new StudyStatus(['tempoTonality'=> ['C'=>120, 'Db' => 210]]);
+        $user1->addStudyStatus($ss3);
+        $s3->addStudyStatus($ss3);
+
 
         // dd($l1);
         $manager->persist($user1);

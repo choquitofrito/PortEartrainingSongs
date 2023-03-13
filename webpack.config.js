@@ -23,6 +23,7 @@ Encore
     .addEntry('app', './assets/app.js')
     // player
     .addEntry('player', '/assets/player.js')
+    .addEntry('customJSTonalities', '/assets/customJSTonalities.js')
 
 
     // enables the Symfony UX Stimulus bridge (used in assets/bootstrap.js)

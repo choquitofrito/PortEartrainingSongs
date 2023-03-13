@@ -13,6 +13,12 @@
 - Créer le modèle 
 - Créer script (.bat en windows) pour initialiser-effacer la BD-lancer les migrations
 - Créer un script pour pusher votre code dans le repo remote
+- Installer le support pour les fixtures
+
+```
+composer require doctrine/doctrine-fixtures-bundle --dev
+```
+
 - Lancer la migration (faites le à chaque changement du modèle)
 
 - Creer le système d'authentication (class User) et le controller pour login
